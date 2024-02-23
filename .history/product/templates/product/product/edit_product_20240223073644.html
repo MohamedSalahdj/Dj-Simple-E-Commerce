@@ -20,28 +20,32 @@
     {% block jsfiles %}
 
     <script>
-      console.log('here')
       document.getElementById('editForm').addEventListener('submit', function(event) {
           const name = document.getElementById('id_name').value.trim();
           const image = document.getElementById('id_image').value.trim();
           const category = document.getElementById('id_category').value;
-          if (name == '') {
-              alert('Please enter a name.');
-              event.preventDefault();
-          }
   
-          if (image === '') {
-              alert('Please select an image.');
-              event.preventDefault();
+          let valid = true;
+  
+          // Clear previous error messages
+          document.getElementById('nameError').textContent = '';
+          document.getElementById('categoryError').textContent = '';
+  
+          if (name === '') {
+              document.getElementById('nameError').textContent = 'Please enter a name.';
+              valid = false;
           }
   
           if (category === '') {
-              alert('Please select a category.');
-              event.preventDefault();
+              document.getElementById('categoryError').textContent = 'Please select a category.';
+              valid = false;
+          }
+  
+          if (!valid) {
+              event.preventDefault(); // Prevent form submission
           }
       });
   </script>
-
     {% endblock jsfiles%}
 
 

@@ -49,9 +49,6 @@ def edit_category(request, category_id):
 
     return render(request, 'product/category/new_category.html', {'form':form})
 
-
-
-
 def list_products(request):
     products = Product.objects.all()
 

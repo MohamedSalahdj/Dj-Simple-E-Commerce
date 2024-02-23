@@ -5,7 +5,7 @@
     <h1 class='my-5 text-primary text-center'>Edit Product</h1>
     <div class='container'>
       <div class='w-50 mx-auto border rounded p-5'>
-        <form method="post" class="form" enctype="multipart/form-data" id="editForm">
+        <form method="post" class="form" enctype="multipart/form-data">
             {% csrf_token %}
         
             {% bootstrap_form form %}
@@ -16,16 +16,13 @@
       </div>
     </div>
 
-  
-    {% block jsfiles %}
-
     <script>
-      console.log('here')
       document.getElementById('editForm').addEventListener('submit', function(event) {
           const name = document.getElementById('id_name').value.trim();
           const image = document.getElementById('id_image').value.trim();
           const category = document.getElementById('id_category').value;
-          if (name == '') {
+  
+          if (name === '') {
               alert('Please enter a name.');
               event.preventDefault();
           }
@@ -41,10 +38,6 @@
           }
       });
   </script>
-
-    {% endblock jsfiles%}
-
-
 
 
 {% endblock content %}

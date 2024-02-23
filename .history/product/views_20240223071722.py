@@ -27,6 +27,7 @@ def new_category(request):
         if form.is_valid():
             form.save()
             return redirect('/category')
+
     else:
         form = CategoryForm()
 
@@ -36,27 +37,6 @@ def list_products(request):
     products = Product.objects.all()
 
     return render(request, 'product/product/list_products.html', {'products':products})
-
-def edit_category(request, category_id):
-    category = Category.objects.get(id=category_id)
-    if request.method == 'POST':
-        form = CategoryForm(request.POST, instance=category)
-        if form.is_valid():
-            form.save()
-            return redirect('/category')
-    else:
-        form = CategoryForm(instance=category)
-
-    return render(request, 'product/category/new_category.html', {'form':form})
-
-
-
-
-def list_products(request):
-    products = Product.objects.all()
-
-    return render(request, 'product/product/list_products.html', {'products':products})
-
 
 
 
