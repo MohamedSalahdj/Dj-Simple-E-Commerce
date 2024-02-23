@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class='mt-5 text-primary text-center'>All Products</h1>
+   <div class='container'>
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+        <div class='w-75 mx-auto'>
+            <img src="{{product.image.url}}" class="card-img-top w-75" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">---</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    {% endfor %}
+
+
+   </div>
+{% endblock content %}

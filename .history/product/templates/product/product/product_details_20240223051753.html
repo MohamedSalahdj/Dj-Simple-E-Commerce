@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class='mt-5 text-center'>Product Details</h1>
+
+<div class='container'>
+
+    <div class='row'>
+        <div>
+        </div>
+        <div class='col-lg-8 col-md-7 col-sm-9 p-4 mx-auto border'>
+            <h4>{{product}}</h4>
+        <div>
+            <a href="{% url 'edit_product' product.id %}" class="btn btn-warning w-25">Edit Product</a>
+    <div>
+
+
+<div>
+
+{% endblock content %}
+
+
+

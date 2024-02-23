@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+    <h1 class='mt-5 text-primary text-center'>ADD New Product</h1>
+    <div class='container'>
+      <div class='w-50 mx-auto border rounded p-5'>
+        <form action="/url/to/submit/" method="post" class="form">
+            {% csrf_token %}
+        
+            {% bootstrap_form form %}
+        
+            <button type='submit' class='d-block mt-2 btn btn-primary w-75 mx-auto'> ADD</button>
+          
+        </form>
+      </div>
+    </div>
+{% endblock content %}

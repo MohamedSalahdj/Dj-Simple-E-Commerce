@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class='mt-5 text-center'>Product Details</h1>
+
+<div class='container'>
+
+    <div class='row justify-content-evenly'>
+        <div class='col-lg-6 col-md-3 col-sm-3 mt-3 d-flex justify-content-center'>
+            <img src='{{product.image.url}}' class=''>
+        </div>
+        <div class='col-lg-4 col-md-8 col-sm-5 p-4 mt-5 border rounded shadow' style='height:160px'>
+            <h4>{{product}}</h4>
+            <h5 class='text-secondary'>category: {{product.category}}</h5>
+            <a href="{% url 'edit_product' product.id %}" class="btn btn-warning">Edit Product</a>
+            <a href="#" class="btn btn-danger">Delete Product</a>
+        <div>
+    <div>
+<div>
+
+{% endblock content %}
+
+
+
